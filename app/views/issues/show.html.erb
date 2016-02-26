@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Título:</strong>
+  <%= @issue.title %>
+</p>
+
+<p>
+  <strong>Endereço:</strong>
+  <%= @issue.address %>
+</p>
+
+<p>
+  <strong>Imagem:</strong>
+  <%= image_tag(@issue.picture_url, :width => 370) if @issue.picture.present? %>
+
+</p>
+
+<p>
+  <strong>Descrição:</strong>
+  <%= @issue.description %>
+</p>
+
+<%= link_to 'Editar', edit_issue_path(@issue) %> |
+<%= link_to 'Voltar', issues_path %>

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Ocorrências</h1>
+
+<% @issues.each do |issue| %>
+<!-- Início -->
+<div class="imc-issue-item">
+          <div class="imc-issue-content" style="float:left">
+            <div class="imc-issue-review">
+              <h2 class="imc-issue-title">
+                <%= issue.title %> <small>status</small>
+              </h2>
+              <div class="imc-issue-address"><%= issue.address %></div>
+              <div class="imc-issue-posted"><%= issue.description %></div>
+            </div>Ocorrência criada no dia: <%= issue.created_at %>
+            <br><br>
+            <%= link_to 'Mostrar', issue %>
+        <%= link_to 'Editar', edit_issue_path(issue) %>
+        <%= link_to 'Apagar', issue, method: :delete, data: { confirm: 'Tem certeza que deseja REMOVER essa ocorrência?' } %>
+
+          </div>
+          <div style="float:right">
+            <%= image_tag(issue.picture_url, :width => 100, :height => 100) if issue.picture.present? %>
+          </div>
+</div>
+<!-- Fim -->
+    <% end %>
+<br>
+
+<%= link_to 'Nova Ocorrência', new_issue_path %>

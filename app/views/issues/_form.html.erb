@@ -1,0 +1,33 @@
+<%= form_for(@issue, :html => { :multipart => true }) do |f| %>
+  <% if @issue.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@issue.errors.count, "error") %> prohibited this issue from being saved:</h2>
+
+      <ul>
+      <% @issue.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label 'Título' %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label 'Endereço' %><br>
+    <%= f.text_field :address %>
+  </div>
+  <div class="field">
+    <%= f.label 'Imagem' %><br>
+    <%= f.file_field :picture %>
+  </div>
+  <div class="field">
+    <%= f.label 'Descrição' %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div class="actions">
+    <%= f.submit 'Salvar' %>
+  </div>
+<% end %>
