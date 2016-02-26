@@ -1461,3 +1461,11 @@ Processing by IssuesController#index as HTML
   [1m[35mIssue Load (0.2ms)[0m  SELECT "issues".* FROM "issues"
   Rendered issues/index.html.erb within layouts/application (3.7ms)
 Completed 200 OK in 141ms (Views: 139.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/issues" for ::1 at 2016-02-25 23:20:08 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by IssuesController#index as HTML
+  [1m[35mIssue Load (0.8ms)[0m  SELECT "issues".* FROM "issues"
+  Rendered issues/index.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 965ms (Views: 917.9ms | ActiveRecord: 1.3ms)
